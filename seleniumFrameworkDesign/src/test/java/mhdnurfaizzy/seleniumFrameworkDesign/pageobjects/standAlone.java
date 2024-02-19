@@ -1,4 +1,5 @@
-package mhdnurfaizzy.seleniumFrameworkDesign;
+package mhdnurfaizzy.seleniumFrameworkDesign.pageobjects;
+
 
 import java.time.Duration;
 import java.util.List;
@@ -8,11 +9,13 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.edge.EdgeDriver;
-import org.openqa.selenium.interactions.Action;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
+import mhdnurfaizzy.seleniumFrameworkDesign.pageobjects.LandingPage;
+
+
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 
@@ -26,12 +29,13 @@ public class standAlone {
 		WebDriver driver = new EdgeDriver();
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 		driver.manage().window().maximize();
-		driver.get("https://rahulshettyacademy.com/client");
+		
+		//POM (PageObjectModel)
+		LandingPage landingPage = new LandingPage(driver);
 
 		//Login
-		driver.findElement(By.id("userEmail")).sendKeys("izi@gmail.com");
-		driver.findElement(By.id("userPassword")).sendKeys("Testing890-");
-		driver.findElement(By.id("login")).click();
+		landingPage.goTo();
+		landingPage.loginApplication("izi@gmail.com", "Testing890-");
 		
 		//waiting load page
 		WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(5));
