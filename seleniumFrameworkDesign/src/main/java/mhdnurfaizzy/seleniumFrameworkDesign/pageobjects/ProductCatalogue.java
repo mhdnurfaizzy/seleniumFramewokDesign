@@ -7,8 +7,6 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-
 import mhdnurfaizzy.AbstractComponenet.abstractComponent;
 
 public class ProductCatalogue extends abstractComponent{
@@ -31,7 +29,7 @@ public class ProductCatalogue extends abstractComponent{
 	@FindBy(css=".ng-animating")
 	 WebElement spinner;
 	
-	By productsBy = By.cssSelector("mb-3");
+	By productsBy = By.cssSelector(".mb-3");
 	By addToCart = By.cssSelector(".card-body button:last-of-type");
 	By toastMessage = By.cssSelector("#toast-container");
 	
@@ -47,11 +45,12 @@ public class ProductCatalogue extends abstractComponent{
 		return prod;
 	}
 	
-	public void addProductToCart(String productName) {
+	public void addProductToCart(String productName) throws InterruptedException {
 		WebElement prod =  getProductByName(productName);
 		prod.findElement(addToCart).click();
 		waitElementForAppear(toastMessage);
 		waitElementUntillDissapear(spinner);
+//		Thread.sleep(2000);
 		
 
 	}
