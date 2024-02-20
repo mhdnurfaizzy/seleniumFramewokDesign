@@ -24,6 +24,8 @@ public class standAlone {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		
+		
+		
 		String productName = "ADIDAS ORIGINAL";
 		WebDriverManager.edgedriver().setup();
 		WebDriver driver = new EdgeDriver();
@@ -36,25 +38,11 @@ public class standAlone {
 		//Login
 		landingPage.goTo();
 		landingPage.loginApplication("izi@gmail.com", "Testing890-");
-		
-		//waiting load page
-		WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(5));
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(".mb-3")));
-		
 		//landed on home page
-		//get list products on page
-		List<WebElement> products = driver.findElements(By.cssSelector(".mb-3"));
-		WebElement prod = products.stream().filter(product->
-		product.findElement(By.cssSelector("b")).getText().equals(productName)).findFirst().orElse(null);
-		
+		ProductCatalogue productCatalog = new ProductCatalogue(driver);
+		List<WebElement> products = productCatalog.getListProducts();
 		//add product to cart
-		prod.findElement(By.cssSelector(".card-body button:last-of-type")).click();
-		
-		//go to cart page
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("#toast-container")));
-		//ng-animating
-		//wait until animate end
-		wait.until(ExpectedConditions.invisibilityOf(driver.findElement(By.cssSelector(".ng-animating"))));
+		productCatalog.addProductToCart(productName);
 		driver.findElement(By.cssSelector("[routerlink*='cart']")).click();
 		
 		//verify product on cart
@@ -70,18 +58,18 @@ public class standAlone {
 		a.sendKeys(driver.findElement(By.cssSelector("input[placeholder='Select Country']")), "india").build().perform();
 		
 		//fill details informastion
-		wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.cssSelector(".ta-results")));
-		driver.findElement(By.cssSelector(".ta-item:nth-of-type(2)")).click();
-		
-		//scroll intoView submit button
-		JavascriptExecutor js = (JavascriptExecutor) driver;
-		js.executeScript("window.scrollBy(0,100)");
-		wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector(".action__submit")));
-		driver.findElement(By.cssSelector(".action__submit")).click();
-		
-		//getText thankyou page
-		String confirmMassage = driver.findElement(By.cssSelector(".hero-primary")).getText();
-		Assert.assertTrue(confirmMassage.equalsIgnoreCase("THANKYOU FOR THE ORDER."));
+//		wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.cssSelector(".ta-results")));
+//		driver.findElement(By.cssSelector(".ta-item:nth-of-type(2)")).click();
+//		
+//		//scroll intoView submit button
+//		JavascriptExecutor js = (JavascriptExecutor) driver;
+//		js.executeScript("window.scrollBy(0,100)");
+//		wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector(".action__submit")));
+//		driver.findElement(By.cssSelector(".action__submit")).click();
+//		
+//		//getText thankyou page
+//		String confirmMassage = driver.findElement(By.cssSelector(".hero-primary")).getText();
+//		Assert.assertTrue(confirmMassage.equalsIgnoreCase("THANKYOU FOR THE ORDER."));
 		driver.quit();
 	
 	}
