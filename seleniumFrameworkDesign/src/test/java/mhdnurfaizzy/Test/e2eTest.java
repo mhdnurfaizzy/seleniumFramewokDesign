@@ -7,6 +7,7 @@ import java.util.List;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
+import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 import mhdnurfaizzy.pageobjects.CartPage;
@@ -19,12 +20,12 @@ import mhdnurfaizzy.testComponent.baseTest;
 public class e2eTest extends baseTest {
 	String productName = "ADIDAS ORIGINAL";
 	
-	@Test
-	public void submitOrder() throws IOException, InterruptedException{
+	@Test(dataProvider= "getData",groups="Purchase")
+	public void submitOrder(String email, String password, String productName) throws IOException, InterruptedException{
 		
 		String countryName = "India";
 		
-		ProductCatalogue productCatalog = landingPage.loginApplication("izi@gmail.com", "Testing890-");
+		ProductCatalogue productCatalog = landingPage.loginApplication(email, password);
 		//landed on home page
 		List<WebElement> products = productCatalog.getListProducts();
 		//add product to cart
@@ -53,5 +54,17 @@ public class e2eTest extends baseTest {
 		OrderPage orderPage = productCatalog.goToOrderPage();
 		Assert.assertTrue(orderPage.verifyOrdersTitleDisplayed(productName));
 	}
+	
+	@DataProvider
+	public Object[][] getData() {
+		return new Object[][] {{"izi@gmail.com", "Testing890-", "ADIDAS ORIGINAL"}, 
+			{"silori@gmail.com", "Testing890-", "ZARA COAT 3"}};
+	}
+	
+	
+	
+	
+	
+	
 
 }
