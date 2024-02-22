@@ -17,7 +17,7 @@ import mhdnurfaizzy.testComponent.baseTest;
 
 public class errorValidationsTest extends baseTest {
 
-	@Test
+	@Test(groups= {"errorHandling"})
 	public void loginErrorValidation() throws IOException, InterruptedException{
 		landingPage.loginApplication("izi@gmail.com", "Testing890");
 		Assert.assertEquals("Incorrect email or password.", landingPage.getErrorMessage());
