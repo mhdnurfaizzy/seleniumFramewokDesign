@@ -1,4 +1,4 @@
-package mhdnurfaizzy.seleniumFrameworkDesign.pageobjects;
+package mhdnurfaizzy.pageobjects;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;

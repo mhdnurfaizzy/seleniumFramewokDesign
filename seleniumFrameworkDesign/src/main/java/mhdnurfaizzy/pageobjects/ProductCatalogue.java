@@ -1,4 +1,4 @@
-package mhdnurfaizzy.seleniumFrameworkDesign.pageobjects;
+package mhdnurfaizzy.pageobjects;
 
 import java.util.List;
 

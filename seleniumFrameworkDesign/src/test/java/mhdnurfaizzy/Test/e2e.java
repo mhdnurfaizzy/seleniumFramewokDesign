@@ -1,4 +1,4 @@
-package mhdnurfaizzy.seleniumFrameworkDesign.pageobjects;
+package mhdnurfaizzy.Test;
 
 
 import java.time.Duration;
@@ -10,6 +10,11 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.testng.Assert;
 import io.github.bonigarcia.wdm.WebDriverManager;
+import mhdnurfaizzy.pageobjects.CartPage;
+import mhdnurfaizzy.pageobjects.CheckoutPage;
+import mhdnurfaizzy.pageobjects.ConfirmationPage;
+import mhdnurfaizzy.pageobjects.LandingPage;
+import mhdnurfaizzy.pageobjects.ProductCatalogue;
 
 public class e2e {
 
