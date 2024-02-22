@@ -10,6 +10,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import mhdnurfaizzy.pageobjects.CartPage;
+import mhdnurfaizzy.pageobjects.OrderPage;
 
 public class abstractComponent {
 	
@@ -17,6 +18,9 @@ public class abstractComponent {
 	
 	@FindBy(css="[routerlink*='cart']")
 	 WebElement cartHeader;
+	
+	@FindBy(css="[routerlink*='myorders']")
+	 WebElement orderHeader;
 	
 	public abstractComponent(WebDriver driver) {
 		// TODO Auto-generated constructor stub
@@ -46,6 +50,12 @@ public class abstractComponent {
 		cartHeader.click();
 		CartPage cartPage = new CartPage(driver);
 		return cartPage;
+	}
+	
+	public OrderPage goToOrderPage() {
+		orderHeader.click();
+		OrderPage orderPage = new OrderPage(driver);
+		return orderPage;
 	}
 
 }

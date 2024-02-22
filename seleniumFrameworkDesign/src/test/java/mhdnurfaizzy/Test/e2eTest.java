@@ -12,14 +12,16 @@ import org.testng.annotations.Test;
 import mhdnurfaizzy.pageobjects.CartPage;
 import mhdnurfaizzy.pageobjects.CheckoutPage;
 import mhdnurfaizzy.pageobjects.ConfirmationPage;
+import mhdnurfaizzy.pageobjects.OrderPage;
 import mhdnurfaizzy.pageobjects.ProductCatalogue;
 import mhdnurfaizzy.testComponent.baseTest;
 
 public class e2eTest extends baseTest {
-
+	String productName = "ADIDAS ORIGINAL";
+	
 	@Test
 	public void submitOrder() throws IOException, InterruptedException{
-		String productName = "ADIDAS ORIGINAL";
+		
 		String countryName = "India";
 		
 		ProductCatalogue productCatalog = landingPage.loginApplication("izi@gmail.com", "Testing890-");
@@ -42,8 +44,14 @@ public class e2eTest extends baseTest {
 		//confirmationPage
 		String confirmMassage = confirmationPage.confirmationMessagge();
 		Assert.assertTrue(confirmMassage.equalsIgnoreCase("THANKYOU FOR THE ORDER."));
-
 	
+	}
+	
+	@Test(dependsOnMethods= {"submitOrder"})
+	public void ordersHistoryTest() {
+		ProductCatalogue productCatalog = landingPage.loginApplication("izi@gmail.com", "Testing890-");
+		OrderPage orderPage = productCatalog.goToOrderPage();
+		Assert.assertTrue(orderPage.verifyOrdersTitleDisplayed(productName));
 	}
 
 }
