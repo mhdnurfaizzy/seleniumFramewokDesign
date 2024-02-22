@@ -3,12 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="mhdnurfaizzy.Test.errorValidations">
+      <class name="mhdnurfaizzy.Test.e2eTest">
         <methods>
           <include name="submitOrder"/>
+          <include name="endTest"/>
           <include name="launchApplication"/>
         </methods>
-      </class> <!-- mhdnurfaizzy.Test.errorValidations -->
+      </class> <!-- mhdnurfaizzy.Test.e2eTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

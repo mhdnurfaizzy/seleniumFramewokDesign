@@ -15,12 +15,18 @@ import mhdnurfaizzy.pageobjects.ConfirmationPage;
 import mhdnurfaizzy.pageobjects.ProductCatalogue;
 import mhdnurfaizzy.testComponent.baseTest;
 
-public class e2e extends baseTest {
+public class errorValidationsTest extends baseTest {
 
 	@Test
-	public void submitOrder() throws IOException, InterruptedException{
+	public void loginErrorValidation() throws IOException, InterruptedException{
+		landingPage.loginApplication("izi@gmail.com", "Testing890");
+		Assert.assertEquals("Incorrect email or password.", landingPage.getErrorMessage());
+	
+	}
+	
+	@Test
+	public void productErrorValidation() throws IOException, InterruptedException{
 		String productName = "ADIDAS ORIGINAL";
-		String countryName = "India";
 		
 		ProductCatalogue productCatalog = landingPage.loginApplication("izi@gmail.com", "Testing890-");
 		//landed on home page
@@ -30,22 +36,9 @@ public class e2e extends baseTest {
 		CartPage cartPage = productCatalog.goToCartPage();
 		
 		//verify product on cart
-		Boolean match = cartPage.verifyProductTitleDisplayed(productName);	
-		Assert.assertTrue(match);
+		Boolean match = cartPage.verifyProductTitleDisplayed("ZARA COAT 33");	
+		Assert.assertFalse(match);
 		
-		//scroll intoView submit button
-		JavascriptExecutor js = (JavascriptExecutor) driver;
-		js.executeScript("window.scrollBy(0,100)");
-		//checkoutPage
-		CheckoutPage checkoutPage = cartPage.goToCheckout();
-		checkoutPage.selectCountry(countryName);
-		ConfirmationPage confirmationPage = checkoutPage.submitOrder();
-		
-		//confirmationPage
-		String confirmMassage = confirmationPage.confirmationMessagge();
-		Assert.assertTrue(confirmMassage.equalsIgnoreCase("THANKYOU FOR THE ORDER."));
-
-	
 	}
 
 }

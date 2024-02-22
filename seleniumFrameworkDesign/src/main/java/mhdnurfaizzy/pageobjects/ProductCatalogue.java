@@ -49,8 +49,8 @@ public class ProductCatalogue extends abstractComponent{
 		WebElement prod =  getProductByName(productName);
 		prod.findElement(addToCart).click();
 		waitElementForAppear(toastMessage);
-		waitElementUntillDissapear(spinner);
-//		Thread.sleep(2000);
+//		waitElementUntillDissapear(spinner);
+		Thread.sleep(1000);
 		
 
 	}
