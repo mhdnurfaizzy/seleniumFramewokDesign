@@ -1,40 +1,29 @@
 package mhdnurfaizzy.Test;
 
 
-import java.time.Duration;
+import java.io.IOException;
 import java.util.List;
 
 import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.edge.EdgeDriver;
 import org.testng.Assert;
-import io.github.bonigarcia.wdm.WebDriverManager;
+import org.testng.annotations.Test;
+
 import mhdnurfaizzy.pageobjects.CartPage;
 import mhdnurfaizzy.pageobjects.CheckoutPage;
 import mhdnurfaizzy.pageobjects.ConfirmationPage;
 import mhdnurfaizzy.pageobjects.LandingPage;
 import mhdnurfaizzy.pageobjects.ProductCatalogue;
+import mhdnurfaizzy.testComponent.baseTest;
 
-public class e2e {
+public class e2e extends baseTest {
 
-	public static void main(String[] args) throws InterruptedException {
-		// TODO Auto-generated method stub
-		
-		
-		
+	@Test
+	public void submitOrder() throws IOException, InterruptedException{
 		String productName = "ADIDAS ORIGINAL";
 		String countryName = "India";
-		WebDriverManager.edgedriver().setup();
-		WebDriver driver = new EdgeDriver();
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-		driver.manage().window().maximize();
 		
-		//POM (PageObjectModel)
-		LandingPage landingPage = new LandingPage(driver);
-
-		//Login
-		landingPage.goTo();
+		LandingPage landingPage = launchApplication();
 		ProductCatalogue productCatalog = landingPage.loginApplication("izi@gmail.com", "Testing890-");
 		//landed on home page
 		List<WebElement> products = productCatalog.getListProducts();
