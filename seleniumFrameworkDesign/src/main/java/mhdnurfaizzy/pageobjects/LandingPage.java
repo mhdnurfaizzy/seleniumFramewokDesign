@@ -31,6 +31,14 @@ public class LandingPage extends abstractComponent{
 	@FindBy(id="login")
 	 WebElement submit;
 	
+	@FindBy(css="[class*='flyInOut']")
+	 WebElement errorMessage;
+	
+	public String getErrorMessage() {
+		waitWebElementForAppear(errorMessage);
+		return errorMessage.getText();
+	}
+	
 	public void goTo()
 	{
 		driver.get("https://rahulshettyacademy.com/client");

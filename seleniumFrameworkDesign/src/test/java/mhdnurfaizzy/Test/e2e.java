@@ -12,7 +12,6 @@ import org.testng.annotations.Test;
 import mhdnurfaizzy.pageobjects.CartPage;
 import mhdnurfaizzy.pageobjects.CheckoutPage;
 import mhdnurfaizzy.pageobjects.ConfirmationPage;
-import mhdnurfaizzy.pageobjects.LandingPage;
 import mhdnurfaizzy.pageobjects.ProductCatalogue;
 import mhdnurfaizzy.testComponent.baseTest;
 
@@ -23,7 +22,6 @@ public class e2e extends baseTest {
 		String productName = "ADIDAS ORIGINAL";
 		String countryName = "India";
 		
-		LandingPage landingPage = launchApplication();
 		ProductCatalogue productCatalog = landingPage.loginApplication("izi@gmail.com", "Testing890-");
 		//landed on home page
 		List<WebElement> products = productCatalog.getListProducts();
@@ -46,7 +44,7 @@ public class e2e extends baseTest {
 		//confirmationPage
 		String confirmMassage = confirmationPage.confirmationMessagge();
 		Assert.assertTrue(confirmMassage.equalsIgnoreCase("THANKYOU FOR THE ORDER."));
-		driver.quit();
+
 	
 	}
 
