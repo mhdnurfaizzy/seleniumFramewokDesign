@@ -38,7 +38,9 @@ public class CheckoutPage extends abstractComponent{
 	}
 	
 	public ConfirmationPage submitOrder() {
-		waitWebElementForAppear(submit);
+//		waitWebElementForAppear(submit);
+        Actions b = new Actions(driver);
+        b.scrollToElement(submit).perform();
 		submit.click();
 		return new ConfirmationPage(driver);
 	}

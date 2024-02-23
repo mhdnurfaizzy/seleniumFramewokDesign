@@ -2,6 +2,7 @@ package mhdnurfaizzy.Test;
 
 
 import java.io.IOException;
+import java.nio.charset.StandardCharsets;
 import java.util.HashMap;
 import java.util.List;
 
@@ -39,8 +40,8 @@ public class e2eTest extends baseTest {
 		CheckoutPage checkoutPage = cartPage.goToCheckout();
 		checkoutPage.selectCountry(countryName);
 		//scroll intoView submit button
-				JavascriptExecutor js = (JavascriptExecutor) driver;
-				js.executeScript("window.scrollBy(0,100)");
+//				JavascriptExecutor js = (JavascriptExecutor) driver;
+//				js.executeScript("window.scrollBy(0,200)");
 		ConfirmationPage confirmationPage = checkoutPage.submitOrder();
 		
 		//confirmationPage
@@ -57,24 +58,23 @@ public class e2eTest extends baseTest {
 	}
 	
 	@DataProvider
-	public Object[][] getData() {
-		HashMap<String, String> map = new HashMap<String, String>();
-		map.put("email", "izi@gmail.com");
-		map.put("password", "Testing890-");
-		map.put("product", "ADIDAS ORIGINAL");
+	public Object[][] getData() throws IOException {
 		
-		HashMap<String, String> map1 = new HashMap<String, String>();
-		map1.put("email", "silori@gmail.com");
-		map1.put("password", "Testing890-");
-		map1.put("product", "ZARA COAT 3");
-
-		return new Object[][] { {map},{map1} };
+		List<HashMap<String, String>> data = getDataJsonToMap(System.getProperty("user.dir") + "\\src\\main\\java\\mhdnurfaizzy\\data\\Purchase.json");
+		return new Object[][] { {data.get(0)},{data.get(1)} };
 	}
-	
-	
-	
 	
 	
 	
 
 }
+
+//HashMap<String, String> map = new HashMap<String, String>();
+//map.put("email", "izi@gmail.com");
+//map.put("password", "Testing890-");
+//map.put("product", "ADIDAS ORIGINAL");
+//
+//HashMap<String, String> map1 = new HashMap<String, String>();
+//map1.put("email", "silori@gmail.com");
+//map1.put("password", "Testing890-");
+//map1.put("product", "ZARA COAT 3");

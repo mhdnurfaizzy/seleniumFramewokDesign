@@ -2,51 +2,51 @@
 <testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-02-22T16:15:23 ICT" name="Suite" finished-at="2024-02-22T16:16:17 ICT" duration-ms="54276">
+  <suite started-at="2024-02-23T10:49:21 ICT" name="Suite" finished-at="2024-02-23T10:49:47 ICT" duration-ms="26217">
     <groups>
       <group name="Purchase">
-        <method signature="e2eTest.submitOrder(java.util.HashMap)[pri:0, instance:mhdnurfaizzy.Test.e2eTest@4145bad8]" name="submitOrder" class="mhdnurfaizzy.Test.e2eTest"/>
+        <method signature="e2eTest.submitOrder(java.util.HashMap)[pri:0, instance:mhdnurfaizzy.Test.e2eTest@55182842]" name="submitOrder" class="mhdnurfaizzy.Test.e2eTest"/>
       </group> <!-- Purchase -->
     </groups>
-    <test started-at="2024-02-22T16:15:23 ICT" name="Error Validations Test" finished-at="2024-02-22T16:15:23 ICT" duration-ms="10">
+    <test started-at="2024-02-23T10:49:21 ICT" name="Error Validations Test" finished-at="2024-02-23T10:49:21 ICT" duration-ms="9">
     </test> <!-- Error Validations Test -->
-    <test started-at="2024-02-22T16:15:23 ICT" name="Submit Order Test" finished-at="2024-02-22T16:16:17 ICT" duration-ms="54276">
+    <test started-at="2024-02-23T10:49:21 ICT" name="Submit Order Test" finished-at="2024-02-23T10:49:47 ICT" duration-ms="26217">
       <class name="mhdnurfaizzy.Test.e2eTest">
-        <test-method is-config="true" signature="launchApplication()[pri:0, instance:mhdnurfaizzy.Test.e2eTest@4145bad8]" started-at="2024-02-22T16:15:23 ICT" name="launchApplication" finished-at="2024-02-22T16:15:46 ICT" duration-ms="22997" status="PASS">
+        <test-method is-config="true" signature="launchApplication()[pri:0, instance:mhdnurfaizzy.Test.e2eTest@55182842]" started-at="2024-02-23T10:49:21 ICT" name="launchApplication" finished-at="2024-02-23T10:49:29 ICT" duration-ms="8355" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- launchApplication -->
-        <test-method signature="submitOrder(java.util.HashMap)[pri:0, instance:mhdnurfaizzy.Test.e2eTest@4145bad8]" started-at="2024-02-22T16:15:46 ICT" name="submitOrder" data-provider="getData" finished-at="2024-02-22T16:15:51 ICT" duration-ms="5437" status="PASS">
+        <test-method signature="submitOrder(java.util.HashMap)[pri:0, instance:mhdnurfaizzy.Test.e2eTest@55182842]" started-at="2024-02-23T10:49:29 ICT" name="submitOrder" data-provider="getData" finished-at="2024-02-23T10:49:34 ICT" duration-ms="5222" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[{password=Testing890-, product=ADIDAS ORIGINAL, email=izi@gmail.com}]]>
+                <![CDATA[{password=Testing890-, product=ZARA COAT 3, email=izi@gmail.com}]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- submitOrder -->
-        <test-method is-config="true" signature="endTest()[pri:0, instance:mhdnurfaizzy.Test.e2eTest@4145bad8]" started-at="2024-02-22T16:15:51 ICT" name="endTest" finished-at="2024-02-22T16:15:51 ICT" duration-ms="346" status="PASS">
+        <test-method is-config="true" signature="endTest()[pri:0, instance:mhdnurfaizzy.Test.e2eTest@55182842]" started-at="2024-02-23T10:49:34 ICT" name="endTest" finished-at="2024-02-23T10:49:35 ICT" duration-ms="356" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- endTest -->
-        <test-method is-config="true" signature="launchApplication()[pri:0, instance:mhdnurfaizzy.Test.e2eTest@4145bad8]" started-at="2024-02-22T16:15:51 ICT" name="launchApplication" finished-at="2024-02-22T16:16:11 ICT" duration-ms="19770" status="PASS">
+        <test-method is-config="true" signature="launchApplication()[pri:0, instance:mhdnurfaizzy.Test.e2eTest@55182842]" started-at="2024-02-23T10:49:35 ICT" name="launchApplication" finished-at="2024-02-23T10:49:42 ICT" duration-ms="6964" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- launchApplication -->
-        <test-method signature="submitOrder(java.util.HashMap)[pri:0, instance:mhdnurfaizzy.Test.e2eTest@4145bad8]" started-at="2024-02-22T16:16:11 ICT" name="submitOrder" data-provider="getData" finished-at="2024-02-22T16:16:17 ICT" duration-ms="5378" status="PASS">
+        <test-method signature="submitOrder(java.util.HashMap)[pri:0, instance:mhdnurfaizzy.Test.e2eTest@55182842]" started-at="2024-02-23T10:49:42 ICT" name="submitOrder" data-provider="getData" finished-at="2024-02-23T10:49:46 ICT" duration-ms="4769" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[{password=Testing890-, product=ZARA COAT 3, email=silori@gmail.com}]]>
+                <![CDATA[{password=Testing890-, product=ADIDAS ORIGINAL, email=silori@gmail.com}]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- submitOrder -->
-        <test-method is-config="true" signature="endTest()[pri:0, instance:mhdnurfaizzy.Test.e2eTest@4145bad8]" started-at="2024-02-22T16:16:17 ICT" name="endTest" finished-at="2024-02-22T16:16:17 ICT" duration-ms="304" status="PASS">
+        <test-method is-config="true" signature="endTest()[pri:0, instance:mhdnurfaizzy.Test.e2eTest@55182842]" started-at="2024-02-23T10:49:46 ICT" name="endTest" finished-at="2024-02-23T10:49:47 ICT" duration-ms="344" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- endTest -->

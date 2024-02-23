@@ -5,7 +5,8 @@
     <classes>
       <class name="mhdnurfaizzy.Test.e2eTest">
         <methods>
-          <include name="submitOrder"/>
+          <include name="submitOrder" invocation-numbers="0"/>
+          <include name="ordersHistoryTest"/>
           <include name="endTest"/>
           <include name="launchApplication"/>
         </methods>
