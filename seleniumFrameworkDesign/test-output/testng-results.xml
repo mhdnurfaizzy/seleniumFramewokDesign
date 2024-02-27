@@ -1,22 +1,135 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
+<testng-results retried="1" ignored="1" total="7" passed="3" failed="2" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-02-23T10:49:21 ICT" name="Suite" finished-at="2024-02-23T10:49:47 ICT" duration-ms="26217">
+  <suite started-at="2024-02-27T15:03:25 ICT" name="Suite" finished-at="2024-02-27T15:04:00 ICT" duration-ms="34556">
     <groups>
       <group name="Purchase">
-        <method signature="e2eTest.submitOrder(java.util.HashMap)[pri:0, instance:mhdnurfaizzy.Test.e2eTest@55182842]" name="submitOrder" class="mhdnurfaizzy.Test.e2eTest"/>
+        <method signature="e2eTest.submitOrder(java.util.HashMap)[pri:0, instance:mhdnurfaizzy.Test.e2eTest@14bdbc74]" name="submitOrder" class="mhdnurfaizzy.Test.e2eTest"/>
       </group> <!-- Purchase -->
+      <group name="errorHandling">
+        <method signature="errorValidationsTest.loginErrorValidation()[pri:0, instance:mhdnurfaizzy.Test.errorValidationsTest@3576ddc2]" name="loginErrorValidation" class="mhdnurfaizzy.Test.errorValidationsTest"/>
+      </group> <!-- errorHandling -->
     </groups>
-    <test started-at="2024-02-23T10:49:21 ICT" name="Error Validations Test" finished-at="2024-02-23T10:49:21 ICT" duration-ms="9">
-    </test> <!-- Error Validations Test -->
-    <test started-at="2024-02-23T10:49:21 ICT" name="Submit Order Test" finished-at="2024-02-23T10:49:47 ICT" duration-ms="26217">
-      <class name="mhdnurfaizzy.Test.e2eTest">
-        <test-method is-config="true" signature="launchApplication()[pri:0, instance:mhdnurfaizzy.Test.e2eTest@55182842]" started-at="2024-02-23T10:49:21 ICT" name="launchApplication" finished-at="2024-02-23T10:49:29 ICT" duration-ms="8355" status="PASS">
+    <test started-at="2024-02-27T15:03:25 ICT" name="Error Validations Test" finished-at="2024-02-27T15:03:56 ICT" duration-ms="30380">
+      <class name="mhdnurfaizzy.Test.errorValidationsTest">
+        <test-method is-config="true" signature="launchApplication()[pri:0, instance:mhdnurfaizzy.Test.errorValidationsTest@3576ddc2]" started-at="2024-02-27T15:03:26 ICT" name="launchApplication" finished-at="2024-02-27T15:03:34 ICT" duration-ms="8049" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- launchApplication -->
-        <test-method signature="submitOrder(java.util.HashMap)[pri:0, instance:mhdnurfaizzy.Test.e2eTest@55182842]" started-at="2024-02-23T10:49:29 ICT" name="submitOrder" data-provider="getData" finished-at="2024-02-23T10:49:34 ICT" duration-ms="5222" status="PASS">
+        <test-method retried="true" signature="loginErrorValidation()[pri:0, instance:mhdnurfaizzy.Test.errorValidationsTest@3576ddc2]" started-at="2024-02-27T15:03:34 ICT" name="loginErrorValidation" finished-at="2024-02-27T15:03:35 ICT" duration-ms="1539" status="SKIP">
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[expected [Incorrect email or password.] but found [Incorrect email password.]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: expected [Incorrect email or password.] but found [Incorrect email password.]
+at org.testng.Assert.fail(Assert.java:111)
+at org.testng.Assert.failNotEquals(Assert.java:1578)
+at org.testng.Assert.assertEqualsImpl(Assert.java:150)
+at org.testng.Assert.assertEquals(Assert.java:132)
+at org.testng.Assert.assertEquals(Assert.java:656)
+at org.testng.Assert.assertEquals(Assert.java:666)
+at mhdnurfaizzy.Test.errorValidationsTest.loginErrorValidation(errorValidationsTest.java:20)
+at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:664)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:228)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:961)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:201)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+at org.testng.TestRunner.privateRun(TestRunner.java:819)
+at org.testng.TestRunner.run(TestRunner.java:619)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:443)
+at org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:481)
+at org.testng.internal.thread.ThreadUtil.lambda$execute$0(ThreadUtil.java:58)
+at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+at java.base/java.lang.Thread.run(Thread.java:1583)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loginErrorValidation -->
+        <test-method is-config="true" signature="endTest()[pri:0, instance:mhdnurfaizzy.Test.errorValidationsTest@3576ddc2]" started-at="2024-02-27T15:03:35 ICT" name="endTest" finished-at="2024-02-27T15:03:36 ICT" duration-ms="438" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- endTest -->
+        <test-method is-config="true" signature="launchApplication()[pri:0, instance:mhdnurfaizzy.Test.errorValidationsTest@3576ddc2]" started-at="2024-02-27T15:03:36 ICT" name="launchApplication" finished-at="2024-02-27T15:03:43 ICT" duration-ms="7938" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- launchApplication -->
+        <test-method signature="loginErrorValidation()[pri:0, instance:mhdnurfaizzy.Test.errorValidationsTest@3576ddc2]" started-at="2024-02-27T15:03:43 ICT" name="loginErrorValidation" finished-at="2024-02-27T15:03:44 ICT" duration-ms="608" status="FAIL">
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[expected [Incorrect email or password.] but found [Incorrect email password.]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: expected [Incorrect email or password.] but found [Incorrect email password.]
+at org.testng.Assert.fail(Assert.java:111)
+at org.testng.Assert.failNotEquals(Assert.java:1578)
+at org.testng.Assert.assertEqualsImpl(Assert.java:150)
+at org.testng.Assert.assertEquals(Assert.java:132)
+at org.testng.Assert.assertEquals(Assert.java:656)
+at org.testng.Assert.assertEquals(Assert.java:666)
+at mhdnurfaizzy.Test.errorValidationsTest.loginErrorValidation(errorValidationsTest.java:20)
+at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:664)
+at org.testng.internal.invokers.TestInvoker.retryFailed(TestInvoker.java:249)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:76)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:961)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:201)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+at org.testng.TestRunner.privateRun(TestRunner.java:819)
+at org.testng.TestRunner.run(TestRunner.java:619)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:443)
+at org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:481)
+at org.testng.internal.thread.ThreadUtil.lambda$execute$0(ThreadUtil.java:58)
+at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+at java.base/java.lang.Thread.run(Thread.java:1583)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loginErrorValidation -->
+        <test-method is-config="true" signature="endTest()[pri:0, instance:mhdnurfaizzy.Test.errorValidationsTest@3576ddc2]" started-at="2024-02-27T15:03:45 ICT" name="endTest" finished-at="2024-02-27T15:03:45 ICT" duration-ms="367" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- endTest -->
+        <test-method is-config="true" signature="launchApplication()[pri:0, instance:mhdnurfaizzy.Test.errorValidationsTest@3576ddc2]" started-at="2024-02-27T15:03:45 ICT" name="launchApplication" finished-at="2024-02-27T15:03:50 ICT" duration-ms="5058" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- launchApplication -->
+        <test-method signature="productErrorValidation()[pri:0, instance:mhdnurfaizzy.Test.errorValidationsTest@3576ddc2]" started-at="2024-02-27T15:03:50 ICT" name="productErrorValidation" finished-at="2024-02-27T15:03:55 ICT" duration-ms="5414" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- productErrorValidation -->
+        <test-method is-config="true" signature="endTest()[pri:0, instance:mhdnurfaizzy.Test.errorValidationsTest@3576ddc2]" started-at="2024-02-27T15:03:55 ICT" name="endTest" finished-at="2024-02-27T15:03:56 ICT" duration-ms="390" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- endTest -->
+      </class> <!-- mhdnurfaizzy.Test.errorValidationsTest -->
+    </test> <!-- Error Validations Test -->
+    <test started-at="2024-02-27T15:03:25 ICT" name="Submit Order Test" finished-at="2024-02-27T15:04:00 ICT" duration-ms="34556">
+      <class name="mhdnurfaizzy.Test.e2eTest">
+        <test-method is-config="true" signature="launchApplication()[pri:0, instance:mhdnurfaizzy.Test.e2eTest@14bdbc74]" started-at="2024-02-27T15:03:26 ICT" name="launchApplication" finished-at="2024-02-27T15:03:33 ICT" duration-ms="7723" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- launchApplication -->
+        <test-method signature="submitOrder(java.util.HashMap)[pri:0, instance:mhdnurfaizzy.Test.e2eTest@14bdbc74]" started-at="2024-02-27T15:03:33 ICT" name="submitOrder" data-provider="getData" finished-at="2024-02-27T15:03:38 ICT" duration-ms="4877" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -27,15 +140,15 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- submitOrder -->
-        <test-method is-config="true" signature="endTest()[pri:0, instance:mhdnurfaizzy.Test.e2eTest@55182842]" started-at="2024-02-23T10:49:34 ICT" name="endTest" finished-at="2024-02-23T10:49:35 ICT" duration-ms="356" status="PASS">
+        <test-method is-config="true" signature="endTest()[pri:0, instance:mhdnurfaizzy.Test.e2eTest@14bdbc74]" started-at="2024-02-27T15:03:38 ICT" name="endTest" finished-at="2024-02-27T15:03:39 ICT" duration-ms="418" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- endTest -->
-        <test-method is-config="true" signature="launchApplication()[pri:0, instance:mhdnurfaizzy.Test.e2eTest@55182842]" started-at="2024-02-23T10:49:35 ICT" name="launchApplication" finished-at="2024-02-23T10:49:42 ICT" duration-ms="6964" status="PASS">
+        <test-method is-config="true" signature="launchApplication()[pri:0, instance:mhdnurfaizzy.Test.e2eTest@14bdbc74]" started-at="2024-02-27T15:03:39 ICT" name="launchApplication" finished-at="2024-02-27T15:03:47 ICT" duration-ms="7976" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- launchApplication -->
-        <test-method signature="submitOrder(java.util.HashMap)[pri:0, instance:mhdnurfaizzy.Test.e2eTest@55182842]" started-at="2024-02-23T10:49:42 ICT" name="submitOrder" data-provider="getData" finished-at="2024-02-23T10:49:46 ICT" duration-ms="4769" status="PASS">
+        <test-method signature="submitOrder(java.util.HashMap)[pri:0, instance:mhdnurfaizzy.Test.e2eTest@14bdbc74]" started-at="2024-02-27T15:03:47 ICT" name="submitOrder" data-provider="getData" finished-at="2024-02-27T15:03:52 ICT" duration-ms="5416" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -46,7 +159,53 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- submitOrder -->
-        <test-method is-config="true" signature="endTest()[pri:0, instance:mhdnurfaizzy.Test.e2eTest@55182842]" started-at="2024-02-23T10:49:46 ICT" name="endTest" finished-at="2024-02-23T10:49:47 ICT" duration-ms="344" status="PASS">
+        <test-method is-config="true" signature="endTest()[pri:0, instance:mhdnurfaizzy.Test.e2eTest@14bdbc74]" started-at="2024-02-27T15:03:52 ICT" name="endTest" finished-at="2024-02-27T15:03:52 ICT" duration-ms="339" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- endTest -->
+        <test-method is-config="true" signature="launchApplication()[pri:0, instance:mhdnurfaizzy.Test.e2eTest@14bdbc74]" started-at="2024-02-27T15:03:52 ICT" name="launchApplication" finished-at="2024-02-27T15:03:59 ICT" duration-ms="6173" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- launchApplication -->
+        <test-method signature="ordersHistoryTest()[pri:0, instance:mhdnurfaizzy.Test.e2eTest@14bdbc74]" started-at="2024-02-27T15:03:59 ICT" name="ordersHistoryTest" finished-at="2024-02-27T15:04:00 ICT" depends-on-methods="mhdnurfaizzy.Test.e2eTest.submitOrder" duration-ms="930" status="FAIL">
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[expected [true] but found [false]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: expected [true] but found [false]
+at org.testng.Assert.fail(Assert.java:111)
+at org.testng.Assert.failNotEquals(Assert.java:1578)
+at org.testng.Assert.assertTrue(Assert.java:57)
+at org.testng.Assert.assertTrue(Assert.java:67)
+at mhdnurfaizzy.Test.e2eTest.ordersHistoryTest(e2eTest.java:56)
+at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:664)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:228)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:961)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:201)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+at org.testng.TestRunner.privateRun(TestRunner.java:819)
+at org.testng.TestRunner.run(TestRunner.java:619)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:443)
+at org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:481)
+at org.testng.internal.thread.ThreadUtil.lambda$execute$0(ThreadUtil.java:58)
+at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+at java.base/java.lang.Thread.run(Thread.java:1583)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- ordersHistoryTest -->
+        <test-method is-config="true" signature="endTest()[pri:0, instance:mhdnurfaizzy.Test.e2eTest@14bdbc74]" started-at="2024-02-27T15:04:00 ICT" name="endTest" finished-at="2024-02-27T15:04:00 ICT" duration-ms="297" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- endTest -->

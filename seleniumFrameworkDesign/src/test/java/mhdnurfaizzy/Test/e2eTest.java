@@ -2,11 +2,9 @@ package mhdnurfaizzy.Test;
 
 
 import java.io.IOException;
-import java.nio.charset.StandardCharsets;
 import java.util.HashMap;
 import java.util.List;
 
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.DataProvider;
@@ -21,6 +19,7 @@ import mhdnurfaizzy.testComponent.baseTest;
 
 public class e2eTest extends baseTest {
 //	String productName = "ADIDAS ORIGINAL";
+	String productName = "ZARA COAT 3";
 	
 	@Test(dataProvider= "getData",groups="Purchase")
 	public void submitOrder(HashMap<String, String> input) throws IOException, InterruptedException{
@@ -51,11 +50,14 @@ public class e2eTest extends baseTest {
 	}
 	
 	@Test(dependsOnMethods= {"submitOrder"})
-	public void ordersHistoryTest(HashMap<String, String> input) {
+	public void ordersHistoryTest() {
 		ProductCatalogue productCatalog = landingPage.loginApplication("izi@gmail.com", "Testing890-");
 		OrderPage orderPage = productCatalog.goToOrderPage();
-		Assert.assertTrue(orderPage.verifyOrdersTitleDisplayed(input.get("product")));
+//		Assert.assertTrue(orderPage.verifyOrdersTitleDisplayed(input.get("product")));
+		Assert.assertTrue(orderPage.verifyOrdersTitleDisplayed(productName));
 	}
+	
+	 
 	
 	@DataProvider
 	public Object[][] getData() throws IOException {

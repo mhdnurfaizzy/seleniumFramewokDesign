@@ -4,23 +4,20 @@ package mhdnurfaizzy.Test;
 import java.io.IOException;
 import java.util.List;
 
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import mhdnurfaizzy.pageobjects.CartPage;
-import mhdnurfaizzy.pageobjects.CheckoutPage;
-import mhdnurfaizzy.pageobjects.ConfirmationPage;
 import mhdnurfaizzy.pageobjects.ProductCatalogue;
 import mhdnurfaizzy.testComponent.baseTest;
 
 public class errorValidationsTest extends baseTest {
 
-	@Test(groups= {"errorHandling"})
+	@Test(groups= {"errorHandling"},retryAnalyzer=mhdnurfaizzy.testComponent.Retry.class)
 	public void loginErrorValidation() throws IOException, InterruptedException{
 		landingPage.loginApplication("izi@gmail.com", "Testing890");
-		Assert.assertEquals("Incorrect email or password.", landingPage.getErrorMessage());
+		Assert.assertEquals("Incorrect email password.", landingPage.getErrorMessage());
 	
 	}
 	
