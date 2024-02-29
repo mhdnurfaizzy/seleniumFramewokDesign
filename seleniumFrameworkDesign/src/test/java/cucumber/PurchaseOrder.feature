@@ -21,11 +21,11 @@ Feature: Purchase the order from E-commerce Website
   I want to use this template for my feature file
   
   Background:
-  Given i landed on e-commerce page
+  Given I landed on e-commerce page
 
   @tag2
   Scenario Outline: Positive case of submiting order 
-    Given I login with email <email> and <pass
+    Given I login with email <email> and password <password>
     Then I added product <productName> to cart
     And Checkout <productName> and submit order
     Then "THANKYOU FOR THE ORDER." message is displayed on confirmationPage

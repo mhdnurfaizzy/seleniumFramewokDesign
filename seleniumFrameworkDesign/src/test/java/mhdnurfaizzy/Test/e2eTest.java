@@ -38,9 +38,6 @@ public class e2eTest extends baseTest {
 		//checkoutPage
 		CheckoutPage checkoutPage = cartPage.goToCheckout();
 		checkoutPage.selectCountry(countryName);
-		//scroll intoView submit button
-//				JavascriptExecutor js = (JavascriptExecutor) driver;
-//				js.executeScript("window.scrollBy(0,200)");
 		ConfirmationPage confirmationPage = checkoutPage.submitOrder();
 		
 		//confirmationPage
