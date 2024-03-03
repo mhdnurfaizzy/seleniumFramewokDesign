@@ -14,19 +14,19 @@ import java.util.List;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 
-import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
 
 public class StepDefinitionImpl extends baseTest{
 	
 	public LandingPage landingPage;
 	public ProductCatalogue productCatalog;
 	public CheckoutPage checkoutPage;
-	ConfirmationPage confirmationPage;
+	public ConfirmationPage confirmationPage;
 	
 	
-	@Given("I landed on e-commerce pag	e")
+	@Given("I landed on ecommerce page")
 	public void I_landed_on_ecommerce_page() throws IOException {
 		landingPage = launchApplication();
 	}
@@ -36,14 +36,14 @@ public class StepDefinitionImpl extends baseTest{
 		productCatalog = landingPage.loginApplication(email, password);
 	}
 	
-	@Then("^I added product (.+) to cart$")
+	@When("^I added product (.+) to cart$")
 	public void I_added_product_to_cart(String productName) throws InterruptedException {
 		List<WebElement> products = productCatalog.getListProducts();
 		//add product to cart
 		productCatalog.addProductToCart(productName);
 	}
 	
-	@And("^Checkout (.+) and submit order$")
+	@When("^Checkout (.+) and submit order$")
 	public void Checkout_and_submit_order(String productName) {
 		CartPage cartPage = productCatalog.goToCartPage();
 		//verify product on cart
@@ -55,10 +55,11 @@ public class StepDefinitionImpl extends baseTest{
 		confirmationPage = checkoutPage.submitOrder();
 	}
 	
-	@Then("^{string} message is displayed on confirmationPage")
+	@Then("{string} message is displayed on confirmationPage")
 	public void message_is_displayed_on_confirmationPage(String string) {
 		String confirmMassage = confirmationPage.confirmationMessagge();
 		Assert.assertTrue(confirmMassage.equalsIgnoreCase(string));
+		driver.quit();
 	}
 
 }
