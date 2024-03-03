@@ -22,7 +22,8 @@ Feature: Purchase the order from E-commerce Website
   
   Background:
   Given I landed on ecommerce page
-
+	
+	@Regression
   Scenario Outline: Positive case of submiting order 
     Given I login with email <email> and password <password>
     Then I added product <productName> to cart
