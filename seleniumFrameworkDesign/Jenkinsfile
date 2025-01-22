@@ -1,13 +1,15 @@
-
 pipeline {
-    agent any  // Runs on any available agent
-
-    stages {
-        stage('Clone GitHub Repository') {
-            steps {
-                // Clone the repository from GitHub
-                git url: 'https://github.com/mhdnurfaizzy/seleniumFramewokDesign/', branch: 'main'
-            }
+        agent any
+        stages {
+                stage('Build') {
+                        steps {
+                                checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[url: '']]])
+                   }
+                }
+                stage('Test') {
+                        steps {
+                                bat 'mvn test "-Dsurefire.suiteXmlFiles=testSuites/Purchase.xml"'
+                        }
+                }
         }
-    }
 }
